@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>headerlinks}}
+  </head>
+  <body>
+    {{>navbar}}
+    
+    <form action="/login" method="POST" class="reg-form">
+    <h1 class="heading">LOGIN FORM</h1>
+      <p class="helper-text">* denotes a required field</p>
+
+      <div class="field-row">
+        <label class="form-label" for="initials">Email Address</label>
+        <input
+          type="email"
+          id="initials"
+          name="email"
+          class="field text-field initials-field"
+          required
+        />
+              <span class="message"></span>
+      </div>
+
+      <div class="field-row">
+        <label class="form-label" for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="field text-field password-field"
+          required
+        />
+        <span class="message"></span>
+      </div>
+
+      <div class="field-row">
+        <label class="form-label"></label>
+        <button class="form-button">Login</button>
+      </div>
+      <p>Not a Member?</p>
+      <a href="/registration"><div id="btn2">Sign Up</div></a>
+    </form>
+
+
+    {{>footer}}
+  </body>
+</html>

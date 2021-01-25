@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{>headerlinks}}
+    </head>
+    <body>
+        {{>navbar}}
+        <!-- main header  -->
+        <div class="main_header">
+
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+
+                    <div class="container-fluid  main_content">
+
+                        <form class="temp_form ">
+
+                            <input type="text" id="cityName" onfocus="this.value=''" placeholder="Enter you city name.." autocomplete="off">
+                            <br>
+                            <input type="submit" value="search" id="submitBtn">
+                            <p id="temp_err"></p>
+                        </form>
+
+                        <div class="tempInformation  ">
+                            <div class="top_layer">
+                                <p id="day"></p>
+                                <p id="today_date"></p>
+                            </div>
+                            <div class="main_layer ">
+                                <p id="city_name"></p>
+                                <div class="middle_layer data_hide">
+                                    <p id="temp">
+                                        <span id="temp_real_val"></span>
+                                        <sup>o</sup>C</p>
+                                    <p id="temp_status">
+                                        <i class="fa fa-cloud" aria-hidden="true"></i>
+                                    </p>
+                                   
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {{>footer}}
+        <script src="js/main.js"></script>
+        <script>
+            const day = document.getElementById('day');
+            const today_date = document.getElementById('today_date');
+            let date = new Date();
+            const gettingDay = () => {
+                let dayarr = new Array(7);
+                dayarr[0] = "Monday"
+                dayarr[1] = "Tuesday"
+                dayarr[2] = "Wednesday"
+                dayarr[3] = "Thursday"
+                dayarr[4] = "Friday"
+                dayarr[5] = "Saturday"
+                dayarr[6] = "Sunday"
+
+                let day = dayarr[date.getDay() - 1];
+                return day
+            }
+
+            const gettingDate = () => {
+                let Date = date.getDate();
+                let montharr = [
+                    "Jan",
+                    "Feb",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "Aug",
+                    "Sept",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ]
+
+                let month = montharr[date.getMonth()];
+                return `${Date} ${month}`
+
+            } 
+            day.innerHTML = gettingDay();
+            today_date.innerHTML = gettingDate();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>headerlinks}}
+  </head>
+  <body>
+    {{>navbar}}
+    <form action="/registration" method="POST" class="reg-form">
+    <h1 class="heading">REGISTRATION FORM</h1>
+      <p class="helper-text">* denotes a required field</p>
+      <div class="field-row">
+        <label class="form-label" for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstname"
+          class="field text-field first-name-field"
+          required
+        />
+        <span class="message"></span>
+      </div>
+      <div class="field-row">
+        <label class="form-label cf" for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastname"
+          class="field text-field last-name-field"
+          required
+        />
+        <span class="message"></span>
+      </div>
+      <div class="field-row">
+        <label class="form-label cf" for="Age">Enter Your Age</label>
+        <input
+          type="text"
+          id="Age"
+          name="age"
+          class="field text-field last-name-field"
+          required
+        />
+        <span class="message"></span>
+      </div>
+      <div class="field-row">
+        <input type="radio" id="male" name="gender" value="male" />
+        <label class="form-label" for="male">Male</label><br />
+        <input type="radio" id="female" name="gender" value="female" />
+        <label class="form-label" for="female">Female</label><br />
+      </div>
+      <div class="field-row">
+        <label class="form-label" for="initials">Email Address</label>
+        <input
+          type="email"
+          id="initials"
+          name="email"
+          class="field text-field initials-field"
+          required
+                <span class="message"></span>
+        />
+      </div>
+      <div class="field-row">
+        <label class="form-label" for="tel">Phone Number</label>
+        <input
+          type="tel"
+          id="tel"
+          name="tel"
+          class="field text-field tel-field"
+          required
+        />
+        <span class="message"></span>
+      </div>
+      <div class="field-row">
+        <label class="form-label" for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="field text-field password-field"
+          required
+        />
+        <span class="message"></span>
+      </div>
+      <div class="field-row">
+        <label class="form-label" for="c-password">Confirm Password</label>
+        <input
+          type="password"
+          id="c-password"
+          name="cpassword"
+          class="field text-field password-field"
+          required
+        />
+        <span class="message"></span>
+      </div>
+
+      <div class="field-row">
+        <label class="form-label"></label>
+        <button class="form-button">Register</button>
+      </div>
+    </form>
+    {{>footer}}
+  </body>
+</html>
